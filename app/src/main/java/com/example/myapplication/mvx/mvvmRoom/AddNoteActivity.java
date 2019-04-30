@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.myapplication.mvx.R;
 
 public class AddNoteActivity extends AppCompatActivity {
+    public static final String EXTRA_ID = "EXTRA_ID";
     public static final String EXTRA_TTILE = "EXTRA_TITLE";
     public static final String EXTRA_DESC = "EXTRA_DESC";
     public static final String EXTRA_PRIORITY = "EXTRA_PRIORITY";
@@ -34,7 +35,17 @@ public class AddNoteActivity extends AppCompatActivity {
         numberPickerPriority.setMaxValue(10);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-        setTitle("Add Note");
+        Intent intent = getIntent();
+        if(intent.hasExtra(EXTRA_ID)){
+            setTitle("Edit Note");
+            editTextTitle.setText(intent.getStringExtra(EXTRA_TTILE));
+            editTextDesc.setText(intent.getStringExtra(EXTRA_DESC));
+            numberPickerPriority.setValue(intent.getIntExtra(EXTRA_ID,1));
+
+        }
+        else {
+            setTitle("Add Note");
+        }
     }
 
     @Override
@@ -68,6 +79,12 @@ public class AddNoteActivity extends AppCompatActivity {
         data.putExtra(EXTRA_TTILE,title);
         data.putExtra(EXTRA_DESC,des);
         data.putExtra(EXTRA_PRIORITY,priority);
+
+
+        int id = getIntent().getIntExtra(EXTRA_ID, -1);
+        if(id != -1){
+            data.putExtra(EXTRA_ID,id);
+        }
         setResult(RESULT_OK,data);
         finish();
     }
