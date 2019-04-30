@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.myapplication.mvx.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class RoomActivity extends AppCompatActivity {
+    public static final int ADD_NOTE_REQUEST = 1;
     private  NoteViewModel noteViewModel;
 
     @Override
@@ -24,6 +27,14 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
 
+        FloatingActionButton buttonAddNote = findViewById(R.id.button_add_note);
+        buttonAddNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RoomActivity.this,AddNoteActivity.class);
+                startActivityForResult(intent,ADD_NOTE_REQUEST);
+            }
+        });
         RecyclerView recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -44,5 +55,22 @@ public class RoomActivity extends AppCompatActivity {
 
     public static Intent getIntent(Context context){
         return new Intent(context, RoomActivity.class);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == ADD_NOTE_REQUEST && resultCode == RESULT_OK){
+            String title = data.getExtras().getString(AddNoteActivity.EXTRA_TTILE);
+            String desc = data.getExtras().getString(AddNoteActivity.EXTRA_DESC);
+            int priority = data.getExtras().getInt(AddNoteActivity.EXTRA_PRIORITY,1);
+            Note note = new Note(title, desc,priority);
+            noteViewModel.insert(note);
+            Toast.makeText(this,"Note saved",Toast.LENGTH_SHORT).show();
+
+        }else {
+            Toast.makeText(this,"Note Not saved",Toast.LENGTH_SHORT).show();
+
+        }
     }
 }
