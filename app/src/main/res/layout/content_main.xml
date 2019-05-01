@@ -44,4 +44,13 @@
         android:text="MVVM - Room"
         android:onClick="onMVVMRoom"
         />
+
+    <Button
+        android:id="@+id/btnRet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Ret"
+        android:onClick="onRet"
+        />
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.example.myapplication.mvx;
 
 import android.os.Bundle;
+
+import com.example.myapplication.mvx.ret.RetActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -68,4 +70,8 @@ public class ArcActivity extends AppCompatActivity {
     public void onMVVMRoom(View view){
         startActivity(RoomActivity.getIntent(this));
     }
+    public void onRet(View view){
+        startActivity(RetActivity.getIntent(this));
+    }
+
 }
