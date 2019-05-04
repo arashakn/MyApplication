@@ -195,8 +195,6 @@ public class RetActivity extends AppCompatActivity {
                     con+="UserId "+p.getUserId() + "\n";
                     tv_result.append(con);
                 }
-
-
             }
 
             @Override
