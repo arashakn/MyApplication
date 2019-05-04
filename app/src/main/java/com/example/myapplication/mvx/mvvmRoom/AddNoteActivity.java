@@ -68,6 +68,7 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote() {
+
         String title = editTextTitle.getText().toString();
         String des = editTextTitle.getText().toString();
         int priority = numberPickerPriority.getValue();

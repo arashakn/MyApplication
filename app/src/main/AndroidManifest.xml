@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvvmRoom.AddNoteActivity"
-            android:parentActivityName=".mvvmRoom.RoomActivity"></activity>
+        <activity android:name=".ret.RetActivity"></activity>
+        <activity
+            android:name=".mvvmRoom.AddNoteActivity"
+            android:parentActivityName=".mvvmRoom.RoomActivity" />
         <activity android:name=".mvvmRoom.RoomActivity" />
         <activity android:name=".mvvm.MvvmActivity" />
         <activity android:name=".mvp.MVPActivity" />
