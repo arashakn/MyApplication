@@ -2,6 +2,7 @@ package com.example.myapplication.mvx;
 
 import android.os.Bundle;
 
+import com.example.myapplication.mvx.bb.AboutActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -72,6 +73,10 @@ public class ArcActivity extends AppCompatActivity {
     }
     public void onRet(View view){
         startActivity(RetActivity.getIntent(this));
+    }
+
+    public void onBB(View view){
+        startActivity(AboutActivity.getIntent(this));
     }
 
 }
