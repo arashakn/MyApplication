@@ -2,6 +2,7 @@ package com.example.myapplication.mvx;
 
 import android.os.Bundle;
 
+import com.example.myapplication.mvx.Recycle.RecycleActivity;
 import com.example.myapplication.mvx.bb.AboutActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -77,6 +78,10 @@ public class ArcActivity extends AppCompatActivity {
 
     public void onBB(View view){
         startActivity(AboutActivity.getIntent(this));
+    }
+
+    public void onRec(View view){
+        startActivity(RecycleActivity.getIntent(this));
     }
 
 }

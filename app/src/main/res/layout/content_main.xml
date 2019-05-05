@@ -63,5 +63,13 @@
         android:onClick="onBB"
         />
 
+    <Button
+        android:id="@+id/btnRec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Recycle"
+        android:onClick="onRec"
+        />
 
 </LinearLayout>
