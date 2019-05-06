@@ -22,4 +22,7 @@ public class RecItem {
     public String getmText2() {
         return mText2;
     }
+    public void changeText1(String text){
+        mText1 = text;
+    }
 }
