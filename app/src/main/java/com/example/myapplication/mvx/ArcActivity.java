@@ -4,7 +4,9 @@ import android.os.Bundle;
 
 import com.example.myapplication.mvx.Recycle.RecycleActivity;
 import com.example.myapplication.mvx.bb.AboutActivity;
+import com.example.myapplication.mvx.coin.ui.home.CoinHomeActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
+import com.example.myapplication.mvx.twitter.ActivityTwitter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -82,6 +84,13 @@ public class ArcActivity extends AppCompatActivity {
 
     public void onRec(View view){
         startActivity(RecycleActivity.getIntent(this));
+    }
+
+    public void onCoin(View view){
+        startActivity(CoinHomeActivity.getIntent(this));
+    }
+    public void onTwt(View view){
+        startActivity(ActivityTwitter.getIntent(this));
     }
 
 }

@@ -72,4 +72,22 @@
         android:onClick="onRec"
         />
 
+    <Button
+        android:id="@+id/btnCoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Coin"
+        android:onClick="onCoin"
+        />
+
+    <Button
+        android:id="@+id/btnTwt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Twitter"
+        android:onClick="onTwt"
+        />
+
 </LinearLayout>

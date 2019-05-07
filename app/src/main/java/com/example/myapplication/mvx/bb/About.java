@@ -2,7 +2,7 @@ package com.example.myapplication.mvx.bb;
 
 /**
  * Created by Backbase R&D B.V on 28/06/2018.
- * MVP contract for AboutActivity
+ * Mvp contract for AboutActivity
  */
 
 public interface About {

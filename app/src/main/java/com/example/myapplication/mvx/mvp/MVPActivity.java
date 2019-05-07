@@ -30,7 +30,7 @@ public class MVPActivity extends AppCompatActivity implements CountriesPresenter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvp);
-        setTitle("MVP Activity");
+        setTitle("Mvp Activity");
 
         presenter = new CountriesPresenter(this);
 
