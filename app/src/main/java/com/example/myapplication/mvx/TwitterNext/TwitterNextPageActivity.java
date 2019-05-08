@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.myapplication.mvx.R;
-import com.example.myapplication.mvx.stride.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Item;
 import com.google.gson.Gson;
 
 public class TwitterNextPageActivity extends AppCompatActivity {
@@ -25,7 +25,7 @@ public class TwitterNextPageActivity extends AppCompatActivity {
         if(bundle!=null) {
             String twtString = bundle.getString(KEY_TWEET);
             Gson gson = new Gson();
-            Post post = gson.fromJson(twtString , Post.class);
+            Item post = gson.fromJson(twtString , Item.class);
             tv_tweet.setText(post.getBody());
         }
 

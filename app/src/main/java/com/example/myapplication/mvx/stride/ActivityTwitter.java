@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.myapplication.mvx.R;
 import com.example.myapplication.mvx.TwitterNext.TwitterNextPageActivity;
 import com.example.myapplication.mvx.stride.adapter.RecAdapter;
-import com.example.myapplication.mvx.stride.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Item;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -24,7 +26,8 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
     private RecyclerView recyclerView;
     private RecAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ArrayList<Post> posts = new ArrayList<>();
+    private ArrayList<Item> posts = new ArrayList<>();
+    private ProgressBar prgBar;
 
 
     @Override
@@ -37,6 +40,7 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
 
     @Override
     public void setViews() {
+        prgBar = findViewById(R.id.prgBar);
         buildRecView();
     }
 
@@ -58,10 +62,11 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
                 deleteItem(pos);
             }
         });
+
     }
 
     @Override
-    public void updateViews(List<Post> posts) {
+    public void updateViews(List<Item> posts) {
         mAdapter.setRecItems(posts);
         mAdapter.notifyDataSetChanged();
     }
@@ -78,11 +83,12 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
 
     @Override
     public void showProgressDialog(int s) {
-
+        prgBar.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgressDialog() {
+        prgBar.setVisibility(View.INVISIBLE);
 
     }
 
@@ -95,9 +101,9 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
     }
 
     public void changeItem(int pos, String text){//on Click : the Post object will be serialized to Json Object
-        Post post = mAdapter.getRecItems().get(pos);
+        Item item = mAdapter.getRecItems().get(pos);
         Gson gson = new Gson();
-        String serialized = gson.toJson(post);
+        String serialized = gson.toJson(item);
         Intent intent= TwitterNextPageActivity.getIntent(this);
         Bundle bundle = new Bundle();
         bundle.putString(TwitterNextPageActivity.KEY_TWEET ,serialized );

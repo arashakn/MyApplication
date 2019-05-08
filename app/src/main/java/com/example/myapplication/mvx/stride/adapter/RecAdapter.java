@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.mvx.R;
-import com.example.myapplication.mvx.stride.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
 public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
 
 
-    List<Post> recItems;
+    List<Item> recItems;
     private OnItemClickListener listener ;
 
      public interface  OnItemClickListener {
@@ -69,7 +69,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
         }
     }
 
-    public RecAdapter(ArrayList<Post> recItems) {
+    public RecAdapter(ArrayList<Item> recItems) {
         this.recItems = recItems;
     }
 
@@ -83,7 +83,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecViewHolder holder, int position) {
-        Post recItem = recItems.get(position);
+        Item recItem = recItems.get(position);
         holder.iv.setImageResource(R.drawable.ic_android);
         holder.tv_up.setText(recItem.getTitle());
         holder.tv_down.setText(recItem.getBody());
@@ -94,12 +94,12 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
         return recItems.size();
     }
 
-    public void setRecItems(List<Post> recItems) {
+    public void setRecItems(List<Item> recItems) {
         this.recItems = recItems;
     }
 
 
-    public List<Post> getRecItems() {
+    public List<Item> getRecItems() {
         return recItems;
     }
 

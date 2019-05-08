@@ -1,7 +1,7 @@
 package com.example.myapplication.mvx.stride;
 
 
-import com.example.myapplication.mvx.stride.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Item;
 import com.example.myapplication.mvx.stride.modelAPI.PostAPI;
 
 import java.util.List;
@@ -24,7 +24,7 @@ public class ModelTwitter {
         api = retrofit.create(PostAPI.class); // Retrofit will create Java class based on API Interface
     }
 
-    public Single<List<Post>> getPosts(){
+    public Single<List<Item>> getPosts(){
         return api.getPosts();
     }
 }

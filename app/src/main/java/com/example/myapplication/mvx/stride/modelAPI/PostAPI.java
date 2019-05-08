@@ -13,5 +13,5 @@ public interface PostAPI {
      * it'will be subscribed by using two methods : onsuccess or onError
      * Single call one of those method once  and subscription to that ends after that
      */
-    Single<List<Post>> getPosts();// create single observable in API
+    Single<List<Item>> getPosts();// create single observable in API
 }

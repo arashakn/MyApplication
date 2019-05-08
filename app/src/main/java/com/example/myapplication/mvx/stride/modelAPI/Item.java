@@ -4,7 +4,7 @@ package com.example.myapplication.mvx.stride.modelAPI;
 /**
  * create Model/POJO(plain old java object) class
  */
-public class Post {
+public class Item {
 
     String userId;
     String id;
