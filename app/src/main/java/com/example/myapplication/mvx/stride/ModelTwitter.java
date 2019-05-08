@@ -3,7 +3,9 @@ package com.example.myapplication.mvx.stride;
 
 import com.example.myapplication.mvx.stride.modelAPI.Item;
 import com.example.myapplication.mvx.stride.modelAPI.PostAPI;
+import com.example.myapplication.mvx.stride.modelAPI.Result;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Single;
@@ -13,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ModelTwitter {
 
-    public static final  String BASE_URL = "https://jsonplaceholder.typicode.com/";
+    public static final  String BASE_URL = "https://rickandmortyapi.com/api/";
     private PostAPI api;
     public ModelTwitter(){ //create retrofit client here
         Retrofit retrofit = new Retrofit.Builder()
@@ -24,7 +26,7 @@ public class ModelTwitter {
         api = retrofit.create(PostAPI.class); // Retrofit will create Java class based on API Interface
     }
 
-    public Single<List<Item>> getPosts(){
+    public Single<Result> getPosts(){
         return api.getPosts();
     }
 }

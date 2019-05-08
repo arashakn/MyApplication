@@ -13,22 +13,38 @@ import com.google.gson.Gson;
 
 public class TwitterNextPageActivity extends AppCompatActivity {
     public static final String KEY_TWEET = "KEY_TWEET";
-    TextView tv_tweet;
+    TextView tv_gender,tv_species;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twitter_next_page);
-        tv_tweet = findViewById(R.id.tv_tweet);
+        setViews();
         Intent  intent = getIntent();
         Bundle bundle = intent.getExtras();
         if(bundle!=null) {
             String twtString = bundle.getString(KEY_TWEET);
             Gson gson = new Gson();
             Item post = gson.fromJson(twtString , Item.class);
-            tv_tweet.setText(post.getBody());
+            if(post != null) {
+                setTitle(post.getName());
+                updateViews(post);
+            }
         }
+    }
 
+    public void setViews(){
+        tv_gender = findViewById(R.id.tv_gender);
+        tv_species = findViewById(R.id.tv_species);
+    }
+
+    public void updateViews(Item post){
+        if(post.getGender()!=null) {
+            tv_gender.setText(post.getGender());
+        }
+        if(post.getSpecies()!=null) {
+            tv_species.setText(post.getSpecies());
+        }
     }
 
     public static Intent getIntent(Context context){

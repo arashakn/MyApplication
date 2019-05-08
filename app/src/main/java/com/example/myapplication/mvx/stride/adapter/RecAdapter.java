@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.mvx.R;
 import com.example.myapplication.mvx.stride.modelAPI.Item;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,9 +85,11 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull RecViewHolder holder, int position) {
         Item recItem = recItems.get(position);
-        holder.iv.setImageResource(R.drawable.ic_android);
-        holder.tv_up.setText(recItem.getTitle());
-        holder.tv_down.setText(recItem.getBody());
+        Picasso.with(holder.iv.getContext()).load(recItem.getImage()).into(holder.iv);
+
+//        holder.iv.setImageResource(R.drawable.ic_android);
+        holder.tv_up.setText(recItem.getName());
+        holder.tv_down.setText(recItem.getImage());
     }
 
     @Override
