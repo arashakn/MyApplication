@@ -1,8 +1,8 @@
-package com.example.myapplication.mvx.twitter;
+package com.example.myapplication.mvx.stride;
 
 
-import com.example.myapplication.mvx.twitter.modelAPI.Post;
-import com.example.myapplication.mvx.twitter.modelAPI.PostAPI;
+import com.example.myapplication.mvx.stride.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.PostAPI;
 
 import java.util.List;
 

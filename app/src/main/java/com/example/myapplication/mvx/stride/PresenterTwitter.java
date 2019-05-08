@@ -1,7 +1,7 @@
-package com.example.myapplication.mvx.twitter;
+package com.example.myapplication.mvx.stride;
 
 
-import com.example.myapplication.mvx.twitter.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Post;
 import java.util.List;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableSingleObserver;

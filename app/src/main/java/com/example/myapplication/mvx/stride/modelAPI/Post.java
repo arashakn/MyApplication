@@ -1,4 +1,4 @@
-package com.example.myapplication.mvx.twitter.modelAPI;
+package com.example.myapplication.mvx.stride.modelAPI;
 
 
 /**

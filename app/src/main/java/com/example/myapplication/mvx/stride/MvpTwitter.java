@@ -1,13 +1,12 @@
-package com.example.myapplication.mvx.twitter;
+package com.example.myapplication.mvx.stride;
 
 import com.example.myapplication.mvx.base.Mvp;
-import com.example.myapplication.mvx.twitter.modelAPI.Post;
+import com.example.myapplication.mvx.stride.modelAPI.Post;
 
 import java.util.List;
 
 public interface MvpTwitter {
     interface Model extends Mvp.Model {
-
     }
 
     interface View extends Mvp.View {

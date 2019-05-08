@@ -1,6 +1,4 @@
-package com.example.myapplication.mvx.twitter.modelAPI;
-
-import com.example.myapplication.mvx.coin.ui.home.modelAPI.CoinList;
+package com.example.myapplication.mvx.stride.modelAPI;
 
 import java.util.List;
 
