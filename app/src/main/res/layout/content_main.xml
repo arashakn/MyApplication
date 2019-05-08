@@ -53,4 +53,41 @@
         android:text="Ret"
         android:onClick="onRet"
         />
+
+    <Button
+        android:id="@+id/btnBB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="BB"
+        android:onClick="onBB"
+        />
+
+    <Button
+        android:id="@+id/btnRec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Recycle"
+        android:onClick="onRec"
+        />
+
+    <Button
+        android:id="@+id/btnCoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Coin"
+        android:onClick="onCoin"
+        />
+
+    <Button
+        android:id="@+id/btnTwt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Stride"
+        android:onClick="onTwt"
+        />
+
 </LinearLayout>
