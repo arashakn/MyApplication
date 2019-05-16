@@ -9,14 +9,14 @@
     tools:showIn="@layout/activity_arc"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnMVC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="MVC"
-        android:onClick="onMVC"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/btnMVC"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="MVC"-->
+        <!--android:onClick="onMVC"-->
+        <!--/>-->
 
     <Button
         android:id="@+id/btnMVP"
@@ -88,6 +88,16 @@
         android:layout_margin="10dp"
         android:text="Stride"
         android:onClick="onTwt"
+        />
+
+
+    <Button
+        android:id="@+id/btnRxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="RxJava"
+        android:onClick="onRxJava"
         />
 
 </LinearLayout>

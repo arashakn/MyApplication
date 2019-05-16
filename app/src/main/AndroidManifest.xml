@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TwitterNext.TwitterNextPageActivity"></activity>
+        <activity android:name=".rxjava.RxJavaOperatorMainActivity"></activity>
+        <activity android:name=".rxjava.RxMainActivity" />
+        <activity android:name=".TwitterNext.TwitterNextPageActivity" />
         <activity android:name=".stride.ActivityTwitter" />
         <activity android:name=".coin.ui.home.CoinHomeActivity" />
         <activity android:name=".Recycle.RecycleActivity" />
