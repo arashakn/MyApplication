@@ -1,12 +1,8 @@
 package com.example.myapplication.mvx.stride;
 
+import com.example.myapplication.managers.charactermodel.modelAPI.PostAPI;
+import com.example.myapplication.managers.charactermodel.modelAPI.Result;
 
-import com.example.myapplication.mvx.stride.modelAPI.Item;
-import com.example.myapplication.mvx.stride.modelAPI.PostAPI;
-import com.example.myapplication.mvx.stride.modelAPI.Result;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import io.reactivex.Single;
 import retrofit2.Retrofit;
@@ -27,6 +23,6 @@ public class ModelTwitter {
     }
 
     public Single<Result> getPosts(){
-        return api.getPosts();
+        return api.getCharacters();
     }
 }

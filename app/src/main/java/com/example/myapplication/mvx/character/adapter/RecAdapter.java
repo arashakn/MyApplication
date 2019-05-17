@@ -1,4 +1,4 @@
-package com.example.myapplication.mvx.stride.adapter;
+package com.example.myapplication.mvx.character.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.managers.charactermodel.modelAPI.Item;
 import com.example.myapplication.mvx.R;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

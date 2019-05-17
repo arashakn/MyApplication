@@ -1,4 +1,4 @@
-package com.example.myapplication.mvx.stride.modelAPI;
+package com.example.myapplication.managers.charactermodel.modelAPI;
 
 import java.util.ArrayList;
 

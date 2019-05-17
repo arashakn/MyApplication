@@ -7,8 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.myapplication.managers.charactermodel.modelAPI.Item;
 import com.example.myapplication.mvx.R;
-import com.example.myapplication.mvx.stride.modelAPI.Item;
 import com.google.gson.Gson;
 
 public class TwitterNextPageActivity extends AppCompatActivity {

@@ -1,11 +1,16 @@
-package com.example.myapplication.mvx.stride;
+package com.example.myapplication.mvx.character;
+
 import com.example.myapplication.managers.charactermodel.modelAPI.Item;
+import com.example.myapplication.managers.charactermodel.modelAPI.Result;
 import com.example.myapplication.mvx.base.Mvp;
 
 import java.util.List;
 
-public interface MvpTwitter {
+import io.reactivex.Single;
+
+public interface MvpCharacter {
     interface Model extends Mvp.Model {
+        public Single<Result> getCharacters();
     }
 
     interface View extends Mvp.View {

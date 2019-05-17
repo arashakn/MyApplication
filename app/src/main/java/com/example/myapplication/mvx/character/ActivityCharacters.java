@@ -1,33 +1,35 @@
-package com.example.myapplication.mvx.stride;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+package com.example.myapplication.mvx.character;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.managers.charactermodel.modelAPI.Item;
 import com.example.myapplication.mvx.R;
 import com.example.myapplication.mvx.TwitterNext.TwitterNextPageActivity;
-import com.example.myapplication.mvx.stride.adapter.RecAdapter;
+import com.example.myapplication.mvx.character.adapter.RecAdapter;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.View{
+public class ActivityCharacters extends AppCompatActivity  implements  MvpCharacter.View{
     private TextView tv_twt;
-    MvpTwitter.Presenter presenter;
+    MvpCharacter.Presenter presenter;
     private RecyclerView recyclerView;
     private RecAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Item> posts = new ArrayList<>();
     private ProgressBar prgBar;
+    private Button btn_retry;
 
 
     @Override
@@ -35,12 +37,21 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
         setViews();
-        presenter = new PresenterTwitter(this);
+        presenter = new PresenterCharacter(this);
     }
 
     @Override
     public void setViews() {
         prgBar = findViewById(R.id.prgBar);
+        btn_retry = findViewById(R.id.btn_retry);
+        btn_retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(presenter!=null){
+                    presenter.fetchPosts();
+                }
+            }
+        });
         buildRecView();
     }
 
@@ -67,13 +78,14 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
 
     @Override
     public void updateViews(List<Item> posts) {
+        btn_retry.setVisibility(View.GONE);
         mAdapter.setRecItems(posts);
         mAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onFailGettingPosts() {
-
+        btn_retry.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -97,7 +109,7 @@ public class ActivityTwitter extends AppCompatActivity  implements  MvpTwitter.V
 
     }
     public static Intent getIntent(Context context) {
-        return  new Intent(context,ActivityTwitter.class);
+        return  new Intent(context, ActivityCharacters.class);
     }
 
     public void changeItem(int pos, String text){//on Click : the Post object will be serialized to Json Object

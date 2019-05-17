@@ -1,31 +1,10 @@
-package com.example.myapplication.mvx.stride.modelAPI;
+package com.example.myapplication.managers.charactermodel.modelAPI;
 
 
 /**
  * create Model/POJO(plain old java object) class
  */
 public class Item {
-
-//    String userId;
-//    String id;
-//    String title;
-//    String body;
-//
-//    public String getUserId() {
-//        return userId;
-//    }
-//
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public String getBody() {
-//        return body;
-//    }
 
     String name;
 
@@ -34,7 +13,6 @@ public class Item {
     String species;
 
     String gender;
-
 
     public String getSpecies() {
         return species;

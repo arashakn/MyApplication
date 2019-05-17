@@ -15,6 +15,15 @@
           android:scrollbars="vertical"
           android:layout_marginBottom="100dp" />
 
+      <Button
+          android:id="@+id/btn_retry"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Retry"
+          android:visibility="gone"
+          android:layout_centerHorizontal="true"
+          />
+
       <EditText
           android:id="@+id/edit_text_insert"
           android:layout_width="40dp"
@@ -56,6 +65,8 @@
           android:text="REMOVE"
           android:visibility="gone"
           />
+
+
 
       <ProgressBar
           android:id="@+id/prgBar"

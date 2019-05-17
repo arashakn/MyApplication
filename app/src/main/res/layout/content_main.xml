@@ -18,14 +18,14 @@
         <!--android:onClick="onMVC"-->
         <!--/>-->
 
-    <Button
-        android:id="@+id/btnMVP"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="MVP"
-        android:onClick="onMVP"
-        />
+    <!--<Button-->
+        <!--android:id="@+id/btnMVP"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:text="MVP"-->
+        <!--android:onClick="onMVP"-->
+        <!--/>-->
 
     <Button
         android:id="@+id/btnMVVM"
@@ -98,6 +98,16 @@
         android:layout_margin="10dp"
         android:text="RxJava"
         android:onClick="onRxJava"
+        />
+
+
+    <Button
+        android:id="@+id/btnChar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Characters"
+        android:onClick="onChar"
         />
 
 </LinearLayout>

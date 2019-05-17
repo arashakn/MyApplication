@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.example.myapplication.mvx.Recycle.RecycleActivity;
 import com.example.myapplication.mvx.bb.AboutActivity;
+import com.example.myapplication.mvx.character.ActivityCharacters;
 import com.example.myapplication.mvx.coin.ui.home.CoinHomeActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
 import com.example.myapplication.mvx.rxjava.RxJavaOperatorMainActivity;
@@ -92,9 +93,11 @@ public class ArcActivity extends AppCompatActivity {
         startActivity(ActivityTwitter.getIntent(this));
     }
     public void onRxJava(View view){
-
         startActivity(RxJavaOperatorMainActivity.getIntent(this));
     }
 
+    public void onChar(View view){
+        startActivity(ActivityCharacters.getIntent(this));
+    }
 
 }
