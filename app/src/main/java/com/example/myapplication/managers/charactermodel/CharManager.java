@@ -1,8 +1,11 @@
 package com.example.myapplication.managers.charactermodel;
 
 import android.content.Context;
+
+import androidx.lifecycle.MutableLiveData;
+
 import com.example.myapplication.MyAppApplication;
-import com.example.myapplication.managers.charactermodel.modelAPI.PostAPI;
+import com.example.myapplication.managers.charactermodel.modelAPI.CharAPI;
 import com.example.myapplication.managers.charactermodel.modelAPI.Result;
 import com.example.myapplication.mvx.character.MvpCharacter;
 import java.io.File;
@@ -12,6 +15,9 @@ import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,7 +33,7 @@ public class CharManager implements MvpCharacter.Model {
     }
 
     public static final  String BASE_URL = "https://rickandmortyapi.com/api/";
-    private PostAPI api;
+    private CharAPI api;
     private File httpCacheDirectory;
     Cache  cache;
     public CharManager(){ //create retrofit client here
@@ -68,11 +74,32 @@ public class CharManager implements MvpCharacter.Model {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(httpClient)
                 .build();
-        api = retrofit.create(PostAPI.class); // Retrofit will create Java class based on API Interface
+        api = retrofit.create(CharAPI.class); // Retrofit will create Java class based on API Interface
     }
 
     @Override
     public Single<Result> getCharacters() {
         return api.getCharacters();
+    }
+
+
+    public MutableLiveData<Result> getCharactersNoRxJava() {
+        final MutableLiveData<Result> data = new MutableLiveData<>();
+        api.getCharactersCall().enqueue(new Callback<Result>() {
+            @Override
+            public void onResponse(Call<Result> call, Response<Result> response) {
+                data.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Result> call, Throwable t) {
+                data.setValue(null);
+            }
+        });
+        return data;
+    }
+
+    public CharAPI getCharApi() {
+        return api;
     }
 }

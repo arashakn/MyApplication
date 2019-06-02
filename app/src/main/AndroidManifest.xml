@@ -3,11 +3,10 @@
     package="com.example.myapplication.mvx">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
         android:name="com.example.myapplication.MyAppApplication"
         android:allowBackup="true"
@@ -16,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".rxjava.RxJavaOperatorMainActivity"></activity>
+        <activity android:name=".udemMV.UdemMainActivity"></activity>
+        <activity android:name=".rxjava.RxJavaOperatorMainActivity" />
         <activity android:name=".rxjava.RxMainActivity" />
         <activity android:name=".TwitterNext.TwitterNextPageActivity" />
         <activity android:name=".stride.ActivityTwitter" />
@@ -24,6 +24,7 @@
         <activity android:name=".coin.ui.home.CoinHomeActivity" />
         <activity android:name=".Recycle.RecycleActivity" />
         <activity android:name=".ret.RetActivity" />
+        <activity android:name=".charMvvm.ActivityMvvMCharacters" />
         <activity
             android:name=".mvvmRoom.AddNoteActivity"
             android:parentActivityName=".mvvmRoom.RoomActivity" />

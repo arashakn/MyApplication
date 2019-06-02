@@ -4,12 +4,14 @@ import android.os.Bundle;
 
 import com.example.myapplication.mvx.Recycle.RecycleActivity;
 import com.example.myapplication.mvx.bb.AboutActivity;
+import com.example.myapplication.mvx.charMvvm.ActivityMvvMCharacters;
 import com.example.myapplication.mvx.character.ActivityCharacters;
 import com.example.myapplication.mvx.coin.ui.home.CoinHomeActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
 import com.example.myapplication.mvx.rxjava.RxJavaOperatorMainActivity;
 import com.example.myapplication.mvx.rxjava.RxMainActivity;
 import com.example.myapplication.mvx.stride.ActivityTwitter;
+import com.example.myapplication.mvx.udemMV.UdemMainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -87,7 +89,7 @@ public class ArcActivity extends AppCompatActivity {
         startActivity(RecycleActivity.getIntent(this));
     }
     public void onCoin(View view){
-        startActivity(CoinHomeActivity.getIntent(this));
+        startActivity(UdemMainActivity.getIntent(this));
     }
     public void onTwt(View view){
         startActivity(ActivityTwitter.getIntent(this));
@@ -95,9 +97,8 @@ public class ArcActivity extends AppCompatActivity {
     public void onRxJava(View view){
         startActivity(RxJavaOperatorMainActivity.getIntent(this));
     }
-
     public void onChar(View view){
-        startActivity(ActivityCharacters.getIntent(this));
+        startActivity(ActivityMvvMCharacters.getIntent(this));
     }
 
 }
