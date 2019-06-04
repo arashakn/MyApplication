@@ -12,6 +12,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -142,6 +143,8 @@ public class ListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         listViewModel= ViewModelProviders.of(this).get(ListViewModel.class);
         listView.setAdapter(new RepoListAdapter(listViewModel,this));
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        listView.setLayoutManager(mLayoutManager);
         listView.setVisibility(View.VISIBLE);
         observeViewModel();
     }

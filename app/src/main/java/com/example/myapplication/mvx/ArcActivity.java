@@ -7,6 +7,7 @@ import com.example.myapplication.mvx.bb.AboutActivity;
 import com.example.myapplication.mvx.charMvvm.ActivityMvvMCharacters;
 import com.example.myapplication.mvx.character.ActivityCharacters;
 import com.example.myapplication.mvx.coin.ui.home.CoinHomeActivity;
+import com.example.myapplication.mvx.photoalbum.PhotoAlbumMainActivity;
 import com.example.myapplication.mvx.ret.RetActivity;
 import com.example.myapplication.mvx.rxjava.RxJavaOperatorMainActivity;
 import com.example.myapplication.mvx.rxjava.RxMainActivity;
@@ -89,7 +90,7 @@ public class ArcActivity extends AppCompatActivity {
         startActivity(RecycleActivity.getIntent(this));
     }
     public void onCoin(View view){
-        startActivity(UdemMainActivity.getIntent(this));
+        startActivity(PhotoAlbumMainActivity.getIntent(this));
     }
     public void onTwt(View view){
         startActivity(ActivityTwitter.getIntent(this));
